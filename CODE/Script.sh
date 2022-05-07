@@ -8,23 +8,23 @@
 #  a different filing system
 #
 #  Example:
-#  > sh Script.sh Ruby_sun black 1.2
+#  > sh Script.sh HM black 1.3
 #
 #  Requires:
-#    1. IMAGES/Ruby_sun.pbm
+#    1. IMAGES/HM.pbm
 #
 #  Generates:
-#    1. PYTHON_OUTPUT/Ruby_sun.txt
-#    2. PYTHON_OUTPUT/Ruby_sun.pkl
-#    3. NEOS_INPUT/Ruby_sun.xml
-#    4. NEOS_OUTPUT/Ruby_sun_neos.txt
-#    5. IMAGES/TSP_IMAGES/Ruby_sun.svg
+#    1. PYTHON_OUTPUT/HM.txt
+#    2. PYTHON_OUTPUT/HM.pkl
+#    3. NEOS_INPUT/HM.xml
+#    4. NEOS_OUTPUT/HM_neos.txt
+#    5. IMAGES/TSP_IMAGES/HM.svg
 #
 #
-#  Created by Kalyani Nagaraj on 26 March, 2022.
+#  Created by Kalyani Nagaraj on March, 2022.
 
 
-cd /Users/kalyani/0_FUN/TSPArt/PYTHON
+cd ../PYTHON
 python3 genCoordinates.py ../IMAGES/$1.pbm ../PYTHON_OUTPUT/$1.txt ../PYTHON_OUTPUT/$1.pkl
 python3 genXML.py ../PYTHON_OUTPUT/$1.txt ../NEOS_INPUT/$1.xml
 python NeosClient.py ../NEOS_INPUT/$1.xml --writetofile ../NEOS_OUTPUT/$1_neos.txt
