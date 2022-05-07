@@ -4,7 +4,7 @@ Continuous-line drawings interpreted as solutions to the traveling salesman prob
 ## About
 This repository is home to Python code that approximates a given `.pbm` image with a continuous-line drawing that is a solution to a [traveling salesman problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem). 
 
-<a href="https://github.com/kalyaninagaraj/TSP-Art/blob/main/IMAGES/HM2.jpg"><img src="IMAGES/HM2.jpg?raw=true" width="245px"></a>&nbsp;&nbsp;<a href="https://github.com/kalyaninagaraj/TSP-Art/blob/main/IMAGES/TSP_IMAGES/HM2.svg"><img src="IMAGES/TSP_IMAGES/HM2.svg?raw=true" width="245px"></a>
+<a href="https://github.com/kalyaninagaraj/TSP-Art/blob/main/IMAGES/HM2.jpg"><img src="IMAGES/HM2.jpg?raw=true" width="245px"></a>&nbsp;&nbsp;<a href="https://github.com/kalyaninagaraj/TSP-Art/blob/main/IMAGES/HM2.pbm"><img src="IMAGES/HM2.pbm?raw=true" width="245px"></a>&nbsp;&nbsp;<a href="https://github.com/kalyaninagaraj/TSP-Art/blob/main/IMAGES/TSP_IMAGES/HM2.svg"><img src="IMAGES/TSP_IMAGES/HM2.svg?raw=true" width="245px"></a>
 
 
 For example, consider the image on the left of a young [Hank Marvin](https://en.wikipedia.org/wiki/Hank_Marvin) from his days with [The Shadows](https://en.wikipedia.org/wiki/The_Shadows). 
