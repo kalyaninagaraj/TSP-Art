@@ -5,14 +5,14 @@ To run code:
 > python genXML.py path/to/TSP_city_coordinates_file.txt path/to/output_XML_file.xml
 
 For example:
-> python3 genXML.py ../PYTHON_OUTPUT/Ruby_sun.txt ../NEOS_INPUT/Ruby_sun.xml
+> python3 genXML.py ../PYTHON_OUTPUT/HM.txt ../NEOS_INPUT/HM.xml
 
 Requires:
 Input in the form of a .txt file of city coordinates:
-path/to/TSP_city_coordinates_file.txt (e.g., ../PYTHON_OUTPUT/Ruby_sun.txt)
+path/to/TSP_city_coordinates_file.txt (e.g., ../PYTHON_OUTPUT/HM.txt)
 
 Generates:
-An .xml file: path/to/output_XML_file.xml (e.g., ../NEOS_INPUT/Ruby_sun.xml)
+An .xml file: path/to/output_XML_file.xml (e.g., ../NEOS_INPUT/HM.xml)
 
 Author:
 Kalyani Nagaraj

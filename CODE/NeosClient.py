@@ -36,7 +36,7 @@ For more information on the XML-RPC API for NEOS, go to:
 https://neos-server.org/neos/xml-rpc.html
 
 To run code:
-> python NeosClient.py Ruby_sun.xml --writetofile ../NEOS_OUTPUT/Ruby_sun_neos.txt
+> python NeosClient.py HM.xml --writetofile ../NEOS_OUTPUT/HM_neos.txt
 OR, to read queue
 > python NeosClient.py queue
 
