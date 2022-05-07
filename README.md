@@ -6,9 +6,7 @@ This repository is home to Python code that approximates a given `.pbm` image wi
 
 ![HankMarvin](https://github.com/kalyaninagaraj/TSP-Art/blob/IMAGES/HM2.jpg?raw=true)
 
-For example, consider the image on the left of a young [Hank Marvin](https://en.wikipedia.org/wiki/Hank_Marvin) from his days with [The Shadows](https://en.wikipedia.org/wiki/The_Shadows). Code in this repository was used to generate two mosaics (see picture in the middle and on the right -- zoom in to see the tiles), each in 12 complete sets of 55 double-nine dominoes, as a pointillistic representation of the black-and-white photo of Hank. 
-
-To learn more about domino mosaics, both the art form and its interpretation as the solution to an integer program, watch mathematician-artist [Robert Bosch](https://www.oberlin.edu/bob-bosch) of Oberlin College give [this talk at Google](https://www.youtube.com/watch?v=g3CiVrN-BnY). 
+For example, consider the image on the left of a young [Hank Marvin](https://en.wikipedia.org/wiki/Hank_Marvin) from his days with [The Shadows](https://en.wikipedia.org/wiki/The_Shadows). 
 
 ## Code Credits
 [@kalyaninagaraj](https://github.com/kalyaninagaraj)
