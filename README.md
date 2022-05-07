@@ -17,7 +17,7 @@ Run the script file `Script.sh` under `CODE`
 The last command takes `IMAGES/HM.pbm` as input and returns a black line drawing `IMAGES/TSP_IMAGES/HM.svg` of the original image with line thickness 1.3px. 
 
 ## Code Credits
-1. Ideas on reading PBM files in Python have been borrowed from EMS's  [code for the same] (https://github.com/evil-mad/EggBot/tree/master/other/TSP-stipple/tsp_art_tools).
+1. Ideas on reading PBM files in Python have been borrowed from EMS Laboratories' [code for the same] (https://github.com/evil-mad/EggBot/tree/master/other/TSP-stipple/tsp_art_tools).
 2. [@kalyaninagaraj](https://github.com/kalyaninagaraj)
 
 ## Photo Credit
