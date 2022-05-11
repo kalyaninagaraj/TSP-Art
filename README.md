@@ -16,9 +16,9 @@ Run the script file `Script.sh` under folder `CODE`
 ```
 The last command takes `IMAGES/HM.pbm` as input and returns a black line drawing `IMAGES/TSP_IMAGES/HM.svg` of the original image with line thickness 1.3px. 
 
-## Code Credits
-1. Ideas on reading PBM files in Python have been borrowed from EMS Laboratories' [code for the same](https://github.com/evil-mad/EggBot/tree/master/other/TSP-stipple/tsp_art_tools).
-2. [@kalyaninagaraj](https://github.com/kalyaninagaraj)
+## Code Credit
+1. Ideas on reading PBM files in Python were borrowed from Evil Mad Scientist Laboratories' [code for the same](https://github.com/evil-mad/EggBot/tree/master/other/TSP-stipple/tsp_art_tools). Check out 
+2. [@kalyaninagaraj](https://github.com/kalyaninagaraj) 
 
 ## Photo Credit
 The image of Hank Marvin is cropped from a [group photo](https://commons.wikimedia.org/wiki/File:Cliff_Richard_aankomst_met_zijn_Shadows,_Bestanddeelnr_913-7397.jpg) of The Shadows that appears in the public domain. 
