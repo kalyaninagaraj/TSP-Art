@@ -1,5 +1,5 @@
 # TSP-Art a la Robert Bosch
-Continuous-line drawings interpreted as solutions to the traveling salesman problem
+Continuous-line drawings interpreted as solutions to the traveling salesman problem, in the style of Robert Bosch. 
 
 ## About
 This repository is home to Python code that approximates a given `.pbm` image with a continuous-line drawing that is a solution to a [traveling salesman problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem). 
@@ -19,6 +19,9 @@ The last command takes `IMAGES/HM.pbm` as input and returns a black line drawing
 ## Code Credit
 1. Ideas on reading PBM files in Python were borrowed from Evil Mad Scientist Laboratories' [code for the same](https://github.com/evil-mad/EggBot/tree/master/other/TSP-stipple/tsp_art_tools). Check out 
 2. [@kalyaninagaraj](https://github.com/kalyaninagaraj) 
+
+## Things To Note
+Starting with a "good" stippled image can make a world of difference to the aesthetic quality of the TSP line drawing. Robert Bosch and his collaborators write of several approaches (algorithms) to achieving that "good" starting point. I took the easy way out and followed the Evil Mad Scientist's Gimp-based approach. Its the messier of the two routes (the other one being coding up the algorithms used by Bosch) in the sense that the process can't be automated because it requires the use of one's eye. 
 
 ## Photo Credit
 The image of Hank Marvin is cropped from a [group photo](https://commons.wikimedia.org/wiki/File:Cliff_Richard_aankomst_met_zijn_Shadows,_Bestanddeelnr_913-7397.jpg) of The Shadows that appears in the public domain. 
