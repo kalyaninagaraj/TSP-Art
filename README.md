@@ -9,9 +9,9 @@ This repository is home to Python code that approximates a given `.pbm` image wi
 To get the TSP tour-like image of [Hank Marvin](https://en.wikipedia.org/wiki/Hank_Marvin) -- the image on the right -- do the following. First, use an image editor like [Gimp](https://www.gimp.org/) to to get the stippled image in the middle by following [these steps](https://wiki.evilmadscientist.com/Producing_a_stippled_image_with_Gimp) by [Evil Mad Scientist Laboratories](https://www.evilmadscientist.com/). It's easy to read the co-ordinates of the stipples when the stippled, or dithered, image is stored as a Portable Bit Map (PBM) file. For now, this code can handle only a type P1 PBM file --- the kind that stores the image's bit map in ASCII format. Next, send the co-ordinates to a TSP solver like [Concorde](https://www.math.uwaterloo.ca/tsp/concorde.html). This code submits a job to the [NEOS Server](https://neos-server.org/neos/) with Concorde set to the Lin-Kernighan heuristic. Finally, convert the returned tour sequence into an SVG image in [Inkscape](https://inkscape.org/).  
 
 ## To Run Code
-Run the script file `Script.sh` under `CODE`
+Run the script file `Script.sh` under folder `CODE`
 ```
-> cd CODE
+> cd CODE/
 > sh Script.sh HM black 1.3
 ```
 The last command takes `IMAGES/HM.pbm` as input and returns a black line drawing `IMAGES/TSP_IMAGES/HM.svg` of the original image with line thickness 1.3px. 
