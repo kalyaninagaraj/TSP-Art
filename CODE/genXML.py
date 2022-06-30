@@ -40,13 +40,15 @@ except OSError as e:
     sys.stderr.write("I/O error(%d): %s: %s\n" % (e.errno, args.action, e.strerror))
     sys.exit(1)
 
+myemail = input('Enter a valid email to submit the job on NEOS: ')
+
 bs_data  = BeautifulSoup("<document><category>co</category><solver>concorde</solver>\
 <inputMethod>TSP</inputMethod><email></email><priority></priority><dat2></dat2>\
 <dat1></dat1><tsp></tsp><ALGTYPE></ALGTYPE><RDTYPE></RDTYPE><PLTYPE></PLTYPE></document>", 'xml')
 
 bs_data.dat2.insert(0, CData(city_coord))
 bs_data.priority.insert(0, CData('long'))
-bs_data.email.insert(0, CData(''))
+bs_data.email.insert(0, CData(myemail))
 bs_data.ALGTYPE.insert(0, CData('lk'))
 bs_data.RDTYPE.insert(0, CData('variable'))
 bs_data.PLTYPE.insert(0, CData('no'))
