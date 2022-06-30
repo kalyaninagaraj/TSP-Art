@@ -46,7 +46,7 @@ bs_data  = BeautifulSoup("<document><category>co</category><solver>concorde</sol
 
 bs_data.dat2.insert(0, CData(city_coord))
 bs_data.priority.insert(0, CData('long'))
-bs_data.email.insert(0, CData('kalyanin@gmail.com'))
+bs_data.email.insert(0, CData(''))
 bs_data.ALGTYPE.insert(0, CData('lk'))
 bs_data.RDTYPE.insert(0, CData('variable'))
 bs_data.PLTYPE.insert(0, CData('no'))
