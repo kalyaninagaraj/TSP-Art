@@ -17,10 +17,10 @@ Run the script file `Script.sh` under folder `CODE`
 The last command takes `IMAGES/HM.pbm` as input and returns a black line drawing `IMAGES/TSP_IMAGES/HM.svg` of the original image with line thickness 1.3px. 
 
 ## Things To Note
-Starting with a "good" stippled image can make a world of difference to the aesthetic quality of the TSP line drawing. Robert Bosch and his collaborators write of several approaches (algorithms) to generate that "good" starting point. I took the easy way out and followed the Evil Mad Scientist's Gimp-based approach. It's the messier of the two routes (the other one being coding up the algorithms used by Bosch) in the sense that it can't be automated because it requires the use of one's eye. 
+Starting with a "good" stippled image can make a world of difference to the aesthetic quality of the TSP line drawing. Robert Bosch and his collaborators write of several approaches (algorithms) to generate that "good" starting point. I took the easy way out and followed the Evil Mad Scientist's Gimp-based approach. It's the messier of the two routes (the other one being coding up the algorithms used by Bosch) in the sense that it can't be automated and requires relying on your eye. 
 
 ## Code Credit
-1. Ideas on reading PBM files in Python were borrowed from Evil Mad Scientist Laboratories' [code for the same](https://github.com/evil-mad/EggBot/tree/master/other/TSP-stipple/tsp_art_tools). Check out 
+1. Ideas on reading PBM files in Python were borrowed from Evil Mad Scientist Laboratories' [code for the same](https://github.com/evil-mad/EggBot/tree/master/other/TSP-stipple/tsp_art_tools). Check it out. 
 2. [@kalyaninagaraj](https://github.com/kalyaninagaraj) 
 
 ## Photo Credit
