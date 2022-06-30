@@ -1,3 +1,10 @@
+'''genCoordinates.py:
+Obtains pixel coordinates from PBM file
+and saves to a text file
+
+Author: Kalyani Nagaraj
+Last Updated: March 2022
+'''
 import os
 import sys
 import pickle
@@ -10,20 +17,20 @@ class tspCityCoord:
 
 
     def __load_pbm_p1( self, f ):
-        assert (self.width > 0) and (self.width > 0)
+        assert (self.width > 0) and (self.height > 0)
         assert (f)
 
         self.coordinates = []
         self.citydict = {}
         column = 0
-        row = self.height - 1
+        row = 1  # row = self.height - 1
 
         self.city_count = 0
         for line in f:
             line = line.strip()
             if ( line[0] == '' ) or ( line[0] == '#' ):
                 continue
-            if row <= -1:
+            if row >= self.height + 1:  # if row <= -1:
                 sys.stderr.write( 'Too much data in %s\n' % self.pbmfile )
                 return False
 
@@ -41,12 +48,12 @@ class tspCityCoord:
                 if column >= self.width:
                     # Finished a row, move down to the next row
                     column = 0
-                    row -= 1
+                    row += 1 # row -= 1
 
         # All done
-        # Perform a sanity check: we should be at the start of row -1
+        # Perform a sanity check: we should be at the start of row -1 (or self.height+1)
         # Pickle the dictionary of coordinates
-        if ( column == 0 ) and ( row == -1 ):
+        if ( column == 0 ) and ( row == self.height +1 ): # or ( row == -1 ):
             p = open( self.pickle_file, "wb" )
             pickle.dump( self.citydict, p )
             p.close()
@@ -65,8 +72,7 @@ class tspCityCoord:
             elif os.path.exists( pbmfile + '.PBM' ):
                 pbmfile += '.PBM'
         else:
-        # Well, we're going to get an error when we try
-        # to open that input file....
+        # Path exists: Do nothing
             pass
 
         # Open the input file
@@ -76,7 +82,7 @@ class tspCityCoord:
         f = open( self.pbmfile, 'r' )
 
         # Find out whether the data is raw (P4) or in ASCII (P1)
-        magic_number = f.readline(4).strip()
+        magic_number = f.readline(4).strip() #just read the first 4 bytes of data
 
         # PBM files must be P1 or P4
         if magic_number in ['P4', 'P1']:
@@ -109,7 +115,7 @@ class tspCityCoord:
         f.close()
 
         # If ok is False, then __load_xxx() will have printed an error
-        # message already
+        # message already, and Python performs a sys.exit(1) on returning
         return ok
 
 
