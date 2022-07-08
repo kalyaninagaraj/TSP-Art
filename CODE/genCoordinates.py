@@ -51,7 +51,7 @@ class tspCityCoord:
                     row += 1 # row -= 1
 
         # All done
-        # Perform a sanity check: we should be at the start of row -1 (or self.height+1)
+        # Perform a sanity check: we should be at the start of row-1 (or self.height+1)
         # Pickle the dictionary of coordinates
         if ( column == 0 ) and ( row == self.height +1 ): # or ( row == -1 ):
             p = open( self.pickle_file, "wb" )
