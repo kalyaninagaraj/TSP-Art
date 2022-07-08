@@ -23,16 +23,16 @@
 """
 Python XML-RPC client for NEOS Server
 =====================================
-
-The original Python code has been lightly modified.
+I have modified the original Python code has been lightly.
 This code, additionally, does the following:
 1. saves the solver output to a file
-2. prints more status messages to screen
+2. prints a few more status messages to screen
+Added or modified lines are tagged with a comment #M: <explanation of mods>
 
-To view the orginal source code, visit repository:
+To view the orginal source code, visit the GitHub repository
 https://github.com/NEOS-Server/PythonClient
 
-For more information on the XML-RPC API for NEOS, go to:
+For more information on the XML-RPC API for NEOS, go to
 https://neos-server.org/neos/xml-rpc.html
 
 To run code:
@@ -61,7 +61,7 @@ parser.add_argument("action", help="specify XML file name or queue for action")
 parser.add_argument("--server", default="https://neos-server.org:3333", help="URL to NEOS Server XML-RPC interface")
 parser.add_argument("--username", default=os.environ.get("NEOS_USERNAME", None), help="username for NEOS Server user account")
 parser.add_argument("--password", default=os.environ.get("NEOS_PASSWORD", None), help="password for NEOS Server user account")
-parser.add_argument("--writetofile", default="../NEOS_OUTPUT/neos-output.txt", help="write optimization output to this file")
+parser.add_argument("--writetofile", default="../NEOS_OUTPUT/neos-output.txt", help="write optimization output to this file") #M: argparse can expect another optional argument with keyword `--writetofile`
 
 args = parser.parse_args()
 
@@ -73,10 +73,10 @@ if alive != "NeosServer is alive\n":
     sys.stderr.write("Could not make connection to NEOS Server\n")
     sys.exit(1)
 
-sys.stdout.write("Connection successful!\n")
+sys.stdout.write("Connection successful!\n") #M: Let the user know that a connection was achieved
 if args.action == "queue":
     msg = neos.printQueue()
-    sys.stdout.write("Printing queue ... \n")
+    sys.stdout.write("Printing queue ... \n") #M: A preamble to the message returned by neos
     sys.stdout.write(msg)
 else:
     xml = ""
@@ -112,6 +112,7 @@ else:
         msg = neos.getFinalResults(jobNumber, password)
         sys.stdout.write(msg.data.decode())
 
+        #M: Save the message/data from neos as an iterator. Parse to retrieve optimization output (that is, the final tour for the TSP problem). Note that this part of the code is especially written for the Concorde solver solving a TSP problem
         lines = iter(re.split('\n+', msg.data.decode()))  # list object is not an iterator and must be converted to one using the iter() function
         with open(args.writetofile, 'w') as f:
             while True:   # Ignore lines upto

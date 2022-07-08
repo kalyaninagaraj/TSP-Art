@@ -13,30 +13,27 @@ class tspCityCoord:
     def __init__( self ):
         self.width = 0
         self.height = 0
-        self.coordinates = []
 
 
     def __load_pbm_p1( self, f ):
         assert (self.width > 0) and (self.height > 0)
         assert (f)
 
-        self.coordinates = []
         self.citydict = {}
         column = 0
-        row = 1  # row = self.height - 1
+        row = 1
 
-        self.city_count = 0
+        self.city_count = 0   # Start from 0th city
         for line in f:
             line = line.strip()
             if ( line[0] == '' ) or ( line[0] == '#' ):
                 continue
-            if row >= self.height + 1:  # if row <= -1:
+            if row >= self.height + 1:
                 sys.stderr.write( 'Too much data in %s\n' % self.pbmfile )
                 return False
 
             for i in range(0, len(line)):
                 if line[i] == '1':
-                    self.coordinates.append(( column, row ))
                     self.citydict[self.city_count]= ( column, row )
                     self.city_count += 1
                 elif line[i] != '0':
@@ -44,23 +41,22 @@ class tspCityCoord:
                     return False
                 column += 1
 
-                # Have we finished this row?
+                # Reached end of row?
                 if column >= self.width:
                     # Finished a row, move down to the next row
                     column = 0
                     row += 1 # row -= 1
 
-        # All done
-        # Perform a sanity check: we should be at the start of row-1 (or self.height+1)
-        # Pickle the dictionary of coordinates
-        if ( column == 0 ) and ( row == self.height +1 ): # or ( row == -1 ):
+        # Perform a sanity check: we should be at the start of row=height+1
+        # If OK, then pickle the dictionary of coordinates
+        if ( column == 0 ) and ( row == self.height +1 ):
             p = open( self.pickle_file, "wb" )
             pickle.dump( self.citydict, p )
             p.close()
             return True
 
-        # Something bad happened
-        sys.stderr.write( ' Premature end-of-file encountered in %s\n' % self.pbmfile )
+        # Something's gone wrong if the rows ended prematurely
+        sys.stderr.write( 'Premature end-of-file encountered in %s\n' % self.pbmfile )
         return False
 
 
@@ -72,7 +68,7 @@ class tspCityCoord:
             elif os.path.exists( pbmfile + '.PBM' ):
                 pbmfile += '.PBM'
         else:
-        # Path exists: Do nothing
+            # Path exists: Do nothing
             pass
 
         # Open the input file
@@ -82,7 +78,7 @@ class tspCityCoord:
         f = open( self.pbmfile, 'r' )
 
         # Find out whether the data is raw (P4) or in ASCII (P1)
-        magic_number = f.readline(4).strip() #just read the first 4 bytes of data
+        magic_number = f.readline(4).strip() # Read just the first 4 bytes of data
 
         # PBM files must be P1 or P4
         if magic_number in ['P4', 'P1']:
@@ -122,15 +118,14 @@ class tspCityCoord:
     def writecoordfile(self, coordfile):
         f = open( coordfile, 'w' )
 
-        # And now write the
-        # list of coordinates
+        # And now write city coordinates to file
         f.write( '%d\n' % self.city_count )
-        for city in self.coordinates:
-            line = "{} {}\n".format(city[0], city[1])
+        for i in range(0, len(self.citydict)):
+            line = "{} {}\n".format(self.citydict[i][0], self.citydict[i][1])
             f.write(line)
 
         # And finally an EOF record
-        print("The image is made of ", self.city_count, "  cities\n")
+        print("\nThe image is made of ", self.city_count, "  cities\n")
         f.close()
 
 
